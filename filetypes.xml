@@ -3,6 +3,7 @@
     <extensionMap>
       <mapping pattern="fdd" type="DTD" />
       <mapping pattern="fff" type="DTD" />
+      <mapping pattern="login" type="JSP" />
       <mapping pattern="sc" type="Native" />
       <mapping pattern="xmltest" type="XML" />
     </extensionMap>
