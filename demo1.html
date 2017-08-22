@@ -18,29 +18,78 @@
 <p>这里是第一个段落。</p>
 <h4></h4>
 <h5></h5>
+<input id="btn" type="button" value="dom4j事件" onclick="domClick()"/>
+<input id="txt" type="text" value=""/>
+<a id="aURL" href="http://www.baidu.com">这是一个超链接</a>
+<button id="btnShowURL">显示超链接地址</button>
+<label id="lURL">超链接的地址是：</label>
+<p>点击图片，可以更换</p>
+<img id="iImg" src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/logo_white_fe6da1ec.png"/>
+<p></p>
+<select>
+    <option>第一行</option>
+    <option>第二行</option>
+    <option>第三行</option>
+</select>
+<input id="btnSelect" type="button" value="添加下拉列表内容"/>
 </body>
 
 <script src="src/jquery-3.2.1.js"></script>
 <!--以下为使用jquery语法-->
 <script>
     $(document).ready(function () {
+//        用标签id能够处理事件，前面要有#
         $("#h1id").click(function () {
             $(this).hide();
         });
-
+//直接用标签能够处理事件
         var o = $("p");
         for (var i = 0; i < o.length; i++) {
             $("h4").text("jquery 生成的h4：" + o[i].innerHTML);
         }
-
+//用类名能够处理事件，前面有.
         var c = $(".xClass");
         var str1 = "jquery 生成的h5：";
         for (var j = 0; j < c.length; j++) {
             str1 += c[j].innerHTML;
         }
         $("h5").text(str1);
+//获取超链接的URL
+        $("#btnShowURL").click(function () {
+            $("#lURL").text("超链接的地址是：" + $("#aURL").attr("href"));
+
+        });
+
+//        更换图片
+        $("img").click(function () {
+            var strImgSrc="https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268/sign=c16d152ceddde711e7d244f09fefcef4/cdbf6c81800a19d8a831212c3bfa828ba61e46ec.jpg";
+            var strBDSrc="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/logo_white_fe6da1ec.png";
+            if($(this).attr("src")==strImgSrc)
+            {
+                $(this).attr("src",strBDSrc);
+            }
+            else
+            {
+                $(this).attr("src",strImgSrc);
+            }
+        });
+//选中select中的option
+        $("select").get(0).selectedIndex=2;
+        //添加option元素
+        $("#btnSelect").click(function () {
+            $("select").append("<option>添加的内容</option>");
+
+        });
     });
 </script>
 <!--end-->
+<script>
+    function domClick() {
+        var str2 = "这是一个dom4j event";
+        var element1 = document.getElementById("txt");
+        element1.value = str2;
 
+    }
+
+</script>
 </html>
