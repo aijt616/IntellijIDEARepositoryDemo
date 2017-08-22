@@ -1,19 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> <!--标记字符为UTF-8-->
     <title>Title</title>
+    <style>
+        h1 {
+            color: red;
+            font-size: 30px;
+            align-content: center;
+        }
+    </style>
 </head>
 <body>
 <h1 id="h1id">第一个元素</h1>
-<h2>第二个元素</h2>
-<h3>第三个元素</h3>
+<h2 class="xClass">第二个元素</h2>
+<h3 class="xClass">第三个元素</h3>
 <p>这里是第一个段落。</p>
+<h4></h4>
+<h5></h5>
 </body>
+
 <script src="src/jquery-3.2.1.js"></script>
+<!--以下为使用jquery语法-->
 <script>
-    $(function () {
-        alert("111");
+    $(document).ready(function () {
+        $("#h1id").click(function () {
+            $(this).hide();
+        });
+
+        var o = $("p");
+        for (var i = 0; i < o.length; i++) {
+            $("h4").text("jquery 生成的h4：" + o[i].innerHTML);
+        }
+
+        var c = $(".xClass");
+        var str1 = "jquery 生成的h5：";
+        for (var j = 0; j < c.length; j++) {
+            str1 += c[j].innerHTML;
+        }
+        $("h5").text(str1);
     });
 </script>
+<!--end-->
+
 </html>
