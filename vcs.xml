@@ -18,8 +18,12 @@
           <option name="url" value="https://github.com/aijt616/IntellijIDEARepositoryDemo.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://gitee.com/IMChou/SpringDemo.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
-    <option name="cloneParentDir" value="D:\Test\IdeaRepository\GithubRepository" />
+    <option name="cloneParentDir" value="D:\Learning Codes\Java\Gitee.com" />
   </component>
 </application>
